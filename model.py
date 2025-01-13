@@ -29,11 +29,12 @@ def generate_app_description(track_name, genre, currency, price, size_bytes, sup
     Create a formatted application description based on provided metadata.
     """
     description = (
-        f'آپ "{track_name}" یک برنامه {genre} است که به ارز {currency} با قیمت {price:.2f} عرضه می‌شود. '
-        f'این برنامه دارای حجمی تقریبی برابر با {size_bytes / (1024**2):.1f} مگابایت بوده و از {supported_devices} دستگاه پشتیبانی می‌کند. '
-        f'توضیحات برنامه: "{app_desc}" '
-        f'مناسب برای کاربران {content_rating}، به {language_count} زبان عرضه می‌شود. '
-        f'این برنامه توسط {rating_total} کاربر امتیازدهی شده و از ویژگی‌های مخصوص iPad با {ipad_support_count} صفحه پشتیبانی می‌کند.'
+        f'The app "{track_name}" is a {genre} app available for {currency} currency '
+        f'at a price of {price:.2f}. It has a size of approximately {size_bytes / (1024**2):.1f} MB '
+        f'and supports {supported_devices} devices. The app description mentions: "{app_desc}" '
+        f'It is rated suitable for users aged {content_rating} and is available in {language_count} languages. '
+        f'It has been rated by {rating_total} users and supports iPad-specific features with '
+        f'{ipad_support_count} dedicated screens.'
     )
     return description
 
@@ -179,7 +180,7 @@ def main():
 
                 st.markdown(f'''
                     <div style="direction: rtl; text-align: right; font-size: 18px; font-family: Tahoma;">
-                        <strong>پاسخ چت‌بات:</strong> {chatbot_response.content}
+                        <strong> پاسخ مدل:</strong> {chatbot_response.content}
                     </div>
                 ''', unsafe_allow_html=True)
 
